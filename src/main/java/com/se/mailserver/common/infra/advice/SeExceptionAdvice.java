@@ -9,7 +9,6 @@ import com.se.mailserver.common.presentation.response.ExceptionResponse;
 import javax.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.BindException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -53,13 +52,6 @@ public class SeExceptionAdvice {
   protected ResponseEntity<ExceptionResponse> handleHttpRequestMethodNotSupportedException(final HttpRequestMethodNotSupportedException e) {
     this.countExceptionAndLog(e);
     return new ResponseEntity<>(ExceptionResponse.of(e), HttpStatus.METHOD_NOT_ALLOWED);
-  }
-
-  // When unauthorized
-  @ExceptionHandler(AccessDeniedException.class)
-  public ResponseEntity<ExceptionResponse> handleAccessDeniedException(final AccessDeniedException e) {
-    this.countExceptionAndLog(e);
-    return new ResponseEntity<>(ExceptionResponse.of(e), HttpStatus.UNAUTHORIZED);
   }
 
   // When json parse exception
