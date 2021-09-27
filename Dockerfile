@@ -13,7 +13,7 @@ VOLUME /var/se-mail-server
 EXPOSE 8075
 
 # The application's jar file
-ARG JAR_FILE=build/libs/mailserver-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=build/libs/se_mail_server-0.0.1-SNAPSHOT.jar
 ARG CONFIG=src/main/resources/application.yml
 
 # Add the application's jar to the container
