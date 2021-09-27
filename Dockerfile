@@ -10,7 +10,7 @@ LABEL maintainer="se@kumoh.ac.kr"
 VOLUME /var/se-mail-server
 
 # Make port 8075 available to the world outside this container
-EXPOSE 8075
+EXPOSE 8076
 
 # The application's jar file
 ARG JAR_FILE=build/libs/se_mail_server-0.0.1-SNAPSHOT.jar
